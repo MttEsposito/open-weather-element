@@ -9,7 +9,8 @@ Step list
 
 1) include in your webpage the script for run the element
   
-  <script type="text/javascript" src="element/dist/weather-element.min.js"></script>
+    <script type="text/javascript" src="element/dist/weather-element.min.js"></script>
+
 
 2) then put in your HTML the tag 
 
