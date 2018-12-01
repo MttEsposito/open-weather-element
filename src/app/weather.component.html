@@ -1,0 +1,76 @@
+<ng-container>
+
+    <div align="center">
+        <div class="weather-card" align="center">
+
+            <div id="weatherElement" *ngIf="weather"
+                class="weather-animation-fadein">
+
+                <!-- header of the card image name city and description -->
+                <div class="weather-header">
+                    <img class="weather-icon" [src]="(imageurl)+(weather.weather[0].icon)+('.'+imageext)+('?sanitize=true')" />
+                    <h4 class="weather-title">{{weather.name}},{{weather.sys.country}}</h4>
+                    <p class="weather-description">{{weather.weather[0].description}}</p>
+                </div>
+
+                <!-- body of the card contain the table with the forecast data  -->
+                <div class="weather-body">
+                    <table class="weather-table">
+                        <tbody>
+                            <tr class="weather-table-row">
+                                <td class="weather-table-label">Temp</td>
+                                <td class="weather-table-value">{{weather.main.calcolateTemp
+                                    | number : '0.0-0'}} 
+                                    <span class="weather-temp-measure" [ngClass]="{'measure-active': measure==='celsius'}" (click)="calcolateTemp('celsius')">°C</span>
+                                    <span class="weather-temp-measure" [ngClass]="{'measure-active': measure==='fahrenheit'}" (click)="calcolateTemp('fahrenheit')">°F</span>
+                                </td>
+                            </tr>
+                            <tr class="weather-table-row">
+                                <td class="weather-table-label">Humidity</td>
+                                <td class="weather-table-value">{{weather.main.humidity
+                                    | number}} %</td>
+                            </tr>
+                            <tr class="weather-table-row">
+                                <td class="weather-table-label">Pressure</td>
+                                <td class="weather-table-value">{{weather.main.pressure}}
+                                        hpa</td>
+                            </tr>
+                            <tr class="weather-table-row">
+                                <td class="weather-table-label">Wind</td>
+                                <td class="weather-table-value">{{weather.wind.speed}}
+                                        m/s</td>
+                            </tr>
+                            <tr class="weather-table-row">
+                                <td class="weather-table-label">Sunrise</td>
+                                <td class="weather-table-value">{{weather.sys.sunrise*1000
+                                    | date:'shortTime'}}</td>
+                            </tr>
+                            <tr class="weather-table-row">
+                                <td class="weather-table-label">Sunset</td>
+                                <td class="weather-table-value">{{weather.sys.sunset*1000
+                                    | date:'shortTime'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- loader of the app -->
+            <div id="weatherSpinner" *ngIf="appLoader">
+                    <div class="lds-ripple">
+                        <div></div>
+                        <div></div>
+                    </div>
+                <span class="weather-loading-title">Checking weather...</span>
+            </div>
+
+            <!-- error section if the first call fail -->
+            <div id="weatherError" *ngIf="fail">
+                <img class="weather-icon" [src]="(imageurl)+('error')+('.'+imageext)+('?sanitize=true')"/>
+                <p>Can't predict weather forecast</p>
+            </div>
+
+        </div>
+    </div>
+    
+</ng-container>
