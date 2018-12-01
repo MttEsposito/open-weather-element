@@ -14,7 +14,7 @@ Step list
 
 2) then put in your HTML the tag 
 
-  {<open-weather apiurl="" apikey="" imageurl="" imageext=""></open-weather>::nomarkdown}
+  \<open-weather apiurl="" apikey="" imageurl="" imageext="">\</open-weather>
   
   
     2.1) element attribute 
