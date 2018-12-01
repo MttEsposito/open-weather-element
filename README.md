@@ -14,12 +14,8 @@ Step list
 
 2) then put in your HTML the tag 
 
-  <open-weather 
-    apiurl="" 
-    apikey=""
-    imageurl="https://raw.githubusercontent.com/MttEsposito/dev-test-repo/master/asset/open-weather-icon/"
-    imageext="svg">
-  </open-weather>
+  <open-weather apiurl="" apikey="" imageurl="" imageext=""></open-weather>
+  
   
     2.1) element attribute 
 
