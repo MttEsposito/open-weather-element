@@ -1,27 +1,40 @@
 # WeatherElement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Custom element created with Angular for print an element with the data of the weather of the user.
+For get the weather conditions i used api from https://openweathermap.org.
 
-## Development server
+# How to use
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Step list
 
-## Code scaffolding
+1) include in your webpage the script for run the element
+  
+  <script type="text/javascript" src="element/dist/weather-element.min.js"></script>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2) then put in your HTML the tag 
 
-## Build
+  <open-weather 
+    apiurl="" 
+    apikey=""
+    imageurl="https://raw.githubusercontent.com/MttEsposito/dev-test-repo/master/asset/open-weather-icon/"
+    imageext="svg">
+  </open-weather>
+  
+    2.1) element attribute 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+      1) attribute apiurl you can put your custom http url request it must return the https://home.openweathermap.org element
+         in the http url it will be added in querystring latitude and longitude 
+         
+      2) attribute apikey you can put directly the key from https://home.openweathermap.org 
+      
+      3) attribute imageurl you can put your custom icon for the element 
+         you must follow this naming convenction from https://openweathermap.org/weather-conditions
+         
+      4) attribute imageext here you can decide the extension of the icon you uploaded
+      
+     
+# Example
 
-## Running unit tests
+<img src="https://raw.githubusercontent.com/MttEsposito/open-weather-element/master/src/assets/asset/image/example.PNG"/>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+****************** more details will be added later
