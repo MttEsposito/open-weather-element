@@ -1,7 +1,8 @@
 # WeatherElement
 
 Custom element created with Angular for print an element with the data of the weather of the user.
-For get the weather conditions i used api from https://openweathermap.org.
+<br>
+For the weather conditions i used api from https://openweathermap.org.
 
 # How to use
 
@@ -14,20 +15,29 @@ Step list
 
 2) then put in your HTML the tag 
 
-  \<open-weather apiurl="" apikey="" imageurl="" imageext="">\</open-weather>
+    \<open-weather apiurl="" apikey="" imageurl="" imageext="">\</open-weather>
   
   
-    2.1) element attribute 
+## Element attribute 
 
-      1) attribute apiurl you can put your custom http url request it must return the https://home.openweathermap.org element
-         in the http url it will be added in querystring latitude and longitude 
+  * <strong>apiurl:</strong> 
+            In this tag you can put your custom http url request.<br>
+            The library will add to your HTTP api the latitude and longitude in querystring<br>
+            example => 'http://www.mywebsite.com/api/weather?lat=1&lon=1'<br>
+            Then in your HTTP code you have to call the api from the website openweather<br>
+            example => 'api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=YOUR-APP-ID-HERE'<br>
+            It must return the openweathermap response object.
          
-      2) attribute apikey you can put directly the key from https://home.openweathermap.org 
+  * <strong>apikey:</strong> In this tag you can put directly the key from https://home.openweathermap.org<br>                  
       
-      3) attribute imageurl you can put your custom icon for the element 
-         you must follow this naming convenction from https://openweathermap.org/weather-conditions
+  * <strong>imageurl:</strong>
+            In this tag you have to put your URL folder for using custom icon<br> 
+            You must follow this naming convenction from https://openweathermap.org/weather-conditions<br>
+            example => 'https://raw.githubusercontent.com/MttEsposito/open-weather-element/master/src/assets/asset/icons/'<br>
          
-      4) attribute imageext here you can decide the extension of the icon you uploaded
+  * <strong>imageext:</strong> 
+            In this tag you have to define the extension of the icon you're using<br>
+            example => 'svg' or 'jpg' or 'png'<br>
       
      
 # Example
