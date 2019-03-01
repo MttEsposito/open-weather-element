@@ -8,7 +8,7 @@ For the weather conditions i used api from https://openweathermap.org.
 
 Step list
 
-1) include in your webpage the script for run the element
+1) include in your website the script for run the element
   
     <script type="text/javascript" src="element/dist/weather-element.min.js"></script>
 
